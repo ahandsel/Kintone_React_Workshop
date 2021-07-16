@@ -16,7 +16,7 @@ Enter the following commands in your terminal
 Then access your Express server at
   * `http://localhost:5000/`
 
-Access the xkcd API call at
+Access the Kintone API call at
   * `http://localhost:5000/getData`
 
 ## Kintone Section: React not updating after updating server.js
