@@ -74,18 +74,14 @@ Check out Will's [React & REST API Series' Articles](https://dev.to/will_yama/se
 
 ---
 
-## Overview of the Files
+## Overview of the Workshop
 
-| File Name                | Description                                                                     | Tag          |
-| ------------------------ | ------------------------------------------------------------------------------- | ------------ |
-| [01_Prep.md](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-01_prep-md)               | Steps to install Node JS, create myproject folder, and install sample react app | Instructions |
-| [02_Text_index.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-02_test_index-js)         | Simple JSX code                                                                 | Frontend     |
-| [03_PromiseError_index.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-03_promiseerror_index-js) | Try to output an API response in React!                                         | Frontend     |
-| [04_StateEffect_index.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-04_stateeffect_index-js)  | Successfully output the response in React!                                      | Frontend     |
-| [05_ExpressServer.md](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-05_expressserver-md)      | Steps to setup Express Server                                                   | Instructions |
-| [06_Kintone_server.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-06_kintone_server-js)     | Get Kintone data                                                                | Backend      |
-| [07_Kintone_index.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-07_kintone_index-js)      | Output Backend's data in React                                                  | Frontend     |
-| [08_Clean_server.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-08_clean_server-js)       | Add a Query Parameters                                                          | Backend      |
-| [09_Clean_index.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-09_clean_index-js)        | Clean the data                                                                  | Frontend     |
-| [10_POST_server.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-10_post_server-js)        | Add a new route for POST requests                                               | Backend      |
-| [11_POST_index.js](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-11_post_index-js)         | Add a form to POST data                                                         | Frontend     |
+| Parts | Type            | Description                                      |
+| ---- | --------------- | ------------------------------------------------ |
+| [Part A](A_PromiseError_Demo.md)    | Demo            | Quick demo using promises in React               |
+| [Part B](B_Hooks.md)    | **Live Coding** | Let's use `useState` & `useEffect` Hooks instead |
+| [Part C](C_KintoneDatabse.md)    | Setup Guide     | Create a Kintone account & a database app        |
+| [Part D](D_CORS_Error_Demo.md)    | Demo            | Quick demo that results in CORS error            |
+| [Part E](E_ExpressServer.md)   | Setup Guide     | Let's set up the *backend* Express server        |
+| [Part F](F_GET_Data.md)    | **Live Coding** | Getting data from the Kintone App                |
+| [Part G](G_POST_Data.md)    | **Live Coding** | Posting data to the Kintone App                  |
