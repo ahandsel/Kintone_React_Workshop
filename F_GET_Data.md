@@ -9,7 +9,7 @@ To implement the GET request, we will be editing the following two files:
 ---
 
 ## backend - server.js
-We will set up an Express server that calls Kintone on the behalf of the frontend React App to avoid the CORS error.
+We will set up an Express server that calls Kintone on behalf of the frontend React App to avoid the CORS error.
 
 Expected result:
   * Calls Kintone's GET Records API when <http://localhost:5000/getData> endpoint is requested with a GET request

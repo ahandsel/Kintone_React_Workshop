@@ -1,10 +1,12 @@
 # Part A: Using Promises in React
 
-When getting data from an API call, we usually need to use [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) right?  
-So let's try that in our frontend React app.
+When getting data from an API call, we usually need to use [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises), right?  
+So let's try that in our frontend React App.
+
+---
 
 ## Sample Code for index.js
-Here is an example that tries to output an API response in React.  
+Here is an example that tries to output an API response in the frontend React App.  
 It calls [Random User Generator API](https://randomuser.me/api/), waits for a response, and then creates a React element using the JSON data.  
 Let's see what happens!  
 
@@ -33,10 +35,12 @@ ReactDOM.render(
 );
 ```
 
+---
+
 ## Result - Error
 
-The `callRestApi()` async function returns a promise object immediately as it waits for theRandom User Generator API's response.  
-React doesn't "wait" for the REST API result so it tries to create and render the element with the promise object immediately, and failing.
+The `callRestApi()` async function returns a promise object immediately as it waits for the Random User Generator API's response.  
+React doesn't "wait" for the REST API result, so it tries to create and render the element with the promise object immediately and failing.
 It attempts to display the Random User Generator API response into a React element.  
 However, the following error will display instead:
 

@@ -23,6 +23,14 @@ Confused? 🤔 → Check out the video below:
 
 ## Create a Kintone App
 
-Let's create a Kintone App to store you favorite [Manga](https://en.wikipedia.org/wiki/Manga)s!
+Let's create a Kintone App to list off your favorite [Manga](https://en.wikipedia.org/wiki/Manga)s!
 
-![CreateApp_1080p.gif Kintone_React_Workshop v2.1](https://github.com/ahandsel/Kintone_React_Workshop/blob/v2.1/ZZ_Graphics/CreateApp_1080p.gif?raw=true)
+Here are the required fields & their configurations for our workshop:
+
+| Field Type    | Field Name    | Field Code | Note                             |
+| ------------- | ------------- | ---------- | -------------------------------- |
+| Text          | Title         | `title`    | The manga's title                |
+| Text          | Author        | `author`   | The manga's author               |
+| Record number | Record number | `recordID` | Auto generated ID for each entry |
+
+![Create_App_Demo.gif Kintone_React_Workshop v2.1](https://github.com/ahandsel/Kintone_React_Workshop/blob/v2.1/ZZ_Graphics/Create_App_Demo.gif?raw=true)

@@ -1,18 +1,23 @@
 # Part G: POST data to the Kintone App
 
-Now that we can retrieve & display the data from the Kintone Database App, let's submit new data via our frontend React App!  
-We will do this by adding a POST request rout on the Express server that will be used when user inputs via form on the frontend React App.
+Now that we can retrieve & display the data from the Kintone Database App let's submit new data via our frontend React App!  
+We will do this by adding a POST request route on the Express server used when the user inputs via the form on the frontend React App.
 
 To implement the POST request, we will be editing the following two files:
   * [backend - server.js](#backend---serverjs)
   * [frontend - index.js](#frontend---indexjs)
 
+**Note**  
+Be sure to restart your Express server when updating `server.js`.
+  * `Control` + `C` to end the Express server
+  * `node server.js` to start it up again
+
 ## backend - server.js
 We will add another endpoint to make our POST requests.
 
 Expected result:
-  * When `localhost:5000/getData` endpoint is called, a GET request is sent to Kintone for data retrieval
-  * When `localhost:5000/postData` endpoint is called, a POST request is sent to Kintone to update the database with submitted entry
+  * When `localhost:5000/getData` endpoint is called, a GET request is sent to Kintone for data retrieval.
+  * When `localhost:5000/postData` endpoint is called, a POST request is sent to Kintone to update the database with the submitted entry.
 
 File Location: `.../myproject/backend`
 
@@ -104,7 +109,7 @@ We will add a form for user input and function to make a POST request on our new
 Expected result:
   * Display Kintone app data as a clean list
   * Form at the bottom to add user input
-  * When input is submitted a POST request is sent out & list is updated
+  * When an input is submitted, a POST request is sent out & the list is updated
 
 File Location: `.../myproject/frontend/src/index.js`
 

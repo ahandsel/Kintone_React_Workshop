@@ -2,11 +2,13 @@
 
 We will use `useState` & `useEffect` Hooks to handle the REST API calls in React.
 
+---
+
 ## What is `useState` & `useEffect` Hooks
 
 [useState hooks](https://reactjs.org/docs/hooks-state.html) allow us to use special "state" variables that we can utilize to render into the React UI.
 
-[useEffect hooks](https://reactjs.org/docs/hooks-effect.html) allow us to run functions after rendering has finished. We'll use this to run a REST API call and update the state variable, which will then cause React to re-render the UI.
+[useEffect hooks](https://reactjs.org/docs/hooks-effect.html) allow us to run functions after the rendering has finished. We'll use this to run a REST API call and update the state variable, which will then cause React to re-render the UI.
 
 ## Sample Code for index.js
 
@@ -60,8 +62,11 @@ ReactDOM.render(
 );
 ```
 
+---
+
 ## Result - Success
 
-Expected output: Outputs the Random User API Call to the page
+Expected output:  
+Outputs the Random User API Call to the frontend React App.
 
 ![React App with Random User API - Will's Article](https://res.cloudinary.com/practicaldev/image/fetch/s--gLC8WZiw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s4hy00cysrqc0a8n2jkf.gif)

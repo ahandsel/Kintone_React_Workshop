@@ -1,12 +1,14 @@
 # Part D: CORS Error Demo
 
-Now that we are outputting Random User Generator API's response onto our React frontend, let's output more useful results!  
+Now that we are outputting Random User Generator API's response onto our frontend React App let's output more useful results!  
 Using Kintone's low-code Database platform, we can easily create & host a database that is accessible with REST APIs.
 
 But can we just swap the request endpoint with Kintone's?
 
+---
+
 ## Sample Code for index.js
-We will try a GET request to Kintone from our React project.
+We will try a GET request to Kintone from our frontend React App.
 
 If you want to run this code, be sure to input your Kintone specifications for `subdomain`, `appID`, and `apiToken`.
 
@@ -54,6 +56,8 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
+---
 
 ## Result - CORS Error
 

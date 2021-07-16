@@ -1,4 +1,15 @@
-# Notes on the Express Server (backend)
+# Setting up the Express Server (backend)
+
+**Outline**
+  * [What is Express?](#what-is-express)
+  * [Setting up the Express Server](#setting-up-the-express-server)
+  * [Starting the Express Server](#starting-the-express-server)
+  * [Debugging](#debugging)
+
+## What is Express?
+[Express](https://expressjs.com/) is a backend web application framework for Node.
+
+We will use Express to create custom endpoints that our frontend React App can make calls to. When we make requests to these custom endpoints, the Express server will make REST API calls to our desired 3rd party service endpoint, receive the response, and then route the response back to our frontend React App.
 
 ## Setting up the Express Server
 (1) From your terminal, go to your **myproject** folder
@@ -32,7 +43,7 @@
 ## Debugging
 
 No response when starting the Express server?
-  * Make sure you are inside `backend` folder when starting the Express server
+  * Make sure you are inside the `backend` folder when starting the Express server
 
 Got a `UnhandledPromiseRejectionWarning` error?
 
@@ -45,4 +56,4 @@ Got a `UnhandledPromiseRejectionWarning` error?
 
 Got a `GAIA_IA02` error?
   * Enter the App's API Token in `apiToken`
-  * Be sure to hit `save` button & `Update App` button to implement the API Token change.
+  * Be sure to hit the `save` button & the `Update App` button to implement the API Token change.
