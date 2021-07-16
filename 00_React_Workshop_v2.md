@@ -53,8 +53,8 @@ Confused? 🤔 → Check out the [Video Guides](#-quick-videos-going-over-the-pr
 
 ### 📺 Quick Videos Going Over the Prep Work
 
-| Install Node & Sample React App | Signing Up for Kintone |
-| ------------------------------- | ---------------------- |
+| Install Node & Sample React App                                                                                                                 | Signing Up for Kintone                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![https://youtu.be/4Kw-i_rX3tY](https://img.youtube.com/vi/4Kw-i_rX3tY/mq1.jpg)](https://youtu.be/4Kw-i_rX3tY)  <https://youtu.be/4Kw-i_rX3tY> | [![https://youtu.be/Gzz8SbTuoFg](https://img.youtube.com/vi/Gzz8SbTuoFg/mq1.jpg)](https://youtu.be/Gzz8SbTuoFg)  <https://youtu.be/Gzz8SbTuoFg> |
 
 ---
@@ -76,12 +76,12 @@ Check out Will's [React & REST API Series' Articles](https://dev.to/will_yama/se
 
 ## Overview of the Workshop
 
-| Parts | Type            | Description                                      |
-| ---- | --------------- | ------------------------------------------------ |
-| [Part A](A_PromiseError_Demo.md)    | Demo            | Quick demo using promises in React               |
-| [Part B](B_Hooks.md)    | **Live Coding** | Let's use `useState` & `useEffect` Hooks instead |
-| [Part C](C_KintoneDatabse.md)    | Setup Guide     | Create a Kintone account & a database app        |
-| [Part D](D_CORS_Error_Demo.md)    | Demo            | Quick demo that results in CORS error            |
-| [Part E](E_ExpressServer.md)   | Setup Guide     | Let's set up the *backend* Express server        |
-| [Part F](F_GET_Data.md)    | **Live Coding** | Getting data from the Kintone App                |
-| [Part G](G_POST_Data.md)    | **Live Coding** | Posting data to the Kintone App                  |
+| Parts                                                                                                   | Type            | Description                                      |
+| ------------------------------------------------------------------------------------------------------- | --------------- | ------------------------------------------------ |
+| [Part A](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-a_promiseerror_demo-md) | Demo            | Quick demo using promises in React               |
+| [Part B](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-b_hooks-md)             | **Live Coding** | Let's use `useState` & `useEffect` Hooks instead |
+| [Part C](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-c_kintonedatabase-md)   | Setup Guide     | Create a Kintone account & a database app        |
+| [Part D](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-d_cors_error_demo-md)   | Demo            | Quick demo that results in CORS error            |
+| [Part E](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-e_expressserver-md)     | Setup Guide     | Let's set up the *backend* Express server        |
+| [Part F](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-f_get_data-md)          | **Live Coding** | Getting data from the Kintone App                |
+| [Part G](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-g_post_data-md)         | **Live Coding** | Posting data to the Kintone App                  |
