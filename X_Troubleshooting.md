@@ -25,10 +25,10 @@ Be sure to restart the server after making changes to server.js!
 (1) Go to the terminal running the Express server.
     It should look something like this:
 
-    ```shell
-    user@computer backend % node server.js
-    Example app listening at http://localhost:${PORT}
-    ```
+  ```shell
+  user@computer backend % node server.js
+  Example app listening at http://localhost:${PORT}
+  ```
 
 (2) Restart the Express server
   * Stop the server: `ctrl + c`
