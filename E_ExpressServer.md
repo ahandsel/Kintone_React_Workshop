@@ -1,8 +1,8 @@
-# Setting up the Express Server (backend)
+# Installing the Express Server (backend)
 
 **Outline**
   * [What is Express?](#what-is-express)
-  * [Setting up the Express Server](#setting-up-the-express-server)
+  * [Installing the Express Server](#installing-the-express-server)
   * [Starting the Express Server](#starting-the-express-server)
   * [Debugging](#debugging)
 
@@ -11,7 +11,7 @@
 
 We will use Express to create custom endpoints that our frontend React App can make calls to. When we make requests to these custom endpoints, the Express server will make REST API calls to our desired 3rd party service endpoint, receive the response, and then route the response back to our frontend React App.
 
-## Setting up the Express Server
+## Installing the Express Server
 (1) From your terminal, go to your **myproject** folder
   * $ `cd .../myproject`
 
