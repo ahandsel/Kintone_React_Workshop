@@ -182,12 +182,11 @@ function RenderResult() {
       });
   }
 
-  // Add a Form
+  // Append a form for user input
   return (
     <div>
       <h1>React App</h1>
       <ul>{apiResponse}</ul>
-      // Append a form for user input
       <form>
         <div>
           <label htmlFor="title-input">Title:</label>
