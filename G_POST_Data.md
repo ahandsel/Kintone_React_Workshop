@@ -124,10 +124,10 @@ const callRestApi = async () => {
   const response = await fetch(getRecordsEndpoint); //Update endpoint
   const jsonResponse = await response.json();
   console.log(jsonResponse);
-  const ArrayOfLists = jsonResponse.records.map(
+  const arrayOfLists = jsonResponse.records.map(
     record => <li key={record.recordID.value}><b>{record.title.value}</b> written by {record.author.value}</li>
   )
-  return ArrayOfLists;
+  return arrayOfLists;
 };
 
 // Make REST API Calls & take in the values stored in the state variables related to the input fields
@@ -187,6 +187,7 @@ function RenderResult() {
     <div>
       <h1>React App</h1>
       <ul>{apiResponse}</ul>
+      // Append a form for user input
       <form>
         <div>
           <label htmlFor="title-input">Title:</label>

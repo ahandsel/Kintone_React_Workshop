@@ -77,11 +77,11 @@ File Location: `.../myproject/frontend/src/index.js`
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-// Get data from Express server
-const restEndpoint = "http://localhost:5000/getData";
+// Declare the GET endpoint defined in our Express server
+const getRecordsEndpoint = "http://localhost:5000/getData";
 
 const callRestApi = async () => {
-  const response = await fetch(restEndpoint);
+  const response = await fetch(getRecordsEndpoint);
   const jsonResponse = await response.json();
 
   console.log(jsonResponse);
@@ -112,7 +112,7 @@ function RenderResult() {
   return (
     <div>
       <h1>React App</h1>
-      <p>{apiResponse}</p>
+      <ul>{apiResponse}</ul>
     </div>
   );
 };
