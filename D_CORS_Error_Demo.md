@@ -63,4 +63,4 @@ ReactDOM.render(
 
 [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) Error occurs since we cannot access the resources that lie on Kintone's domain directly from our domain (frontend React App).
 
-![CORS_Error_Crop.png Kintone_React_Workshop v2.1](https://github.com/ahandsel/Kintone_React_Workshop/blob/v2.1/ZZ_Graphics/CORS_Error_Crop.png?raw=true)
+![CORS_Error_Crop.png Kintone_React_Workshop v2.1](https://user-images.githubusercontent.com/30670749/125892916-ef0f189c-af9f-4dc4-95d6-c0a111bb7238.png)

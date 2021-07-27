@@ -48,4 +48,4 @@ However, the following error will display instead:
 Error: Objects are not valid as a React child (found: [object Promise]). If you meant to render a collection of children, use an array instead.
 ```
 
-![Promise_Error.png - Kintone_React_Workshop - v2.1](https://github.com/ahandsel/Kintone_React_Workshop/blob/v2.1/ZZ_Graphics/Promise_Error.png?raw=true)
+![Promise_Error.png - Kintone_React_Workshop - v2.1](https://user-images.githubusercontent.com/30670749/125893011-dbc39697-4944-4684-84a7-1472aeeb8407.png)

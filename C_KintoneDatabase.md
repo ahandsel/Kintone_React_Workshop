@@ -33,4 +33,4 @@ Here are the required fields & their configurations for our workshop:
 | Text          | Author        | `author`   | The manga's author               |
 | Record number | Record number | `recordID` | Auto generated ID for each entry |
 
-![Create_App_Demo.gif Kintone_React_Workshop v2.1](https://github.com/ahandsel/Kintone_React_Workshop/blob/v2.1/ZZ_Graphics/Create_App_Demo.gif?raw=true)
+![Create_App_Demo.gif Kintone_React_Workshop v2.1](https://user-images.githubusercontent.com/30670749/125898739-1bc018ac-1740-40e0-91cc-ab829192d2ea.gif)
