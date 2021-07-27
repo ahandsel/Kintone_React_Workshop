@@ -26,6 +26,9 @@ const fetch = require('node-fetch');
 const PORT = 5000;
 const app = express();
 
+// Parse incoming requests with JSON payloads
+app.use(express.json());
+
 // Set Cross-Origin Resource Sharing (CORS) to frontend React App
 app.use(cors());
 const corsOptions = {
