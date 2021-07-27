@@ -38,16 +38,14 @@ const corsOptions = {
 // Kintone API Setup
 const subdomain = ""; //Enter your Kintone Subdomain (ex: devevents)
 const appID = ""; //Enter your App's ID number (ex: 1)
-const apiToken = ""; //Enter your App's API Token
+const apiToken = ""; //Enter your App's API Token (ex: cJrAD9...)
 
 // Append a Query Parameters to the Request Endpoint
 const parameters = "query=order by recordID asc";
 
-/// Call Kintone's GET Records API
-const requestEndpoint = `https://${subdomain}.kintone.com/k/v1/records.json?app=${appID}&${parameters}`;
+const multipleRecordsEndpoint = `https://${subdomain}.kintone.com/k/v1/records.json?app=${appID}&${parameters}`
 
-// This function runs if the http://localhost:5000/getData endpoint
-// is requested with a GET request
+// This runs if a GET request calls for localhost:5000/getData
 app.get('/getData', cors(corsOptions), async (req, res) => {
   const fetchOptions = {
     method: 'GET',
@@ -55,7 +53,7 @@ app.get('/getData', cors(corsOptions), async (req, res) => {
       'X-Cybozu-API-Token': apiToken
     }
   }
-  const response = await fetch(requestEndpoint, fetchOptions);
+  const response = await fetch(multipleRecordsEndpoint, fetchOptions);
   const jsonResponse = await response.json();
   res.json(jsonResponse);
 });

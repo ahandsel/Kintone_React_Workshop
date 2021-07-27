@@ -22,6 +22,7 @@ Expected result:
 File Location: `.../myproject/backend`
 
 ```js
+// Express Server Setup
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
@@ -32,23 +33,24 @@ const app = express();
 // Parse incoming requests with JSON payloads
 app.use(express.json());
 
+// Set Cross-Origin Resource Sharing (CORS) to frontend React App
 app.use(cors());
 const corsOptions = {
   origin: "http://localhost:3000"
 };
 
 // Kintone API Setup
-const subdomain = ""; //Example: devevents
-const appID = ""; //Example: 1
-const apiToken = ""; //Example: cJrAD9... (40 characters in total)
+const subdomain = ""; //Enter your Kintone Subdomain (ex: devevents)
+const appID = ""; //Enter your App's ID number (ex: 1)
+const apiToken = ""; //Enter your App's API Token (ex: cJrAD9...)
 
 // Append a Query Parameters to the Request Endpoint
 const parameters = "query=order by recordID asc";
 
-// const requestEndpoint = `https://${subdomain}.kintone.com/k/v1/records.json?app=${appID}&${parameters}`;
-
+// Call Kintone's GET Records API
 const multipleRecordsEndpoint = `https://${subdomain}.kintone.com/k/v1/records.json?app=${appID}&${parameters}`
 
+// Call Kintone's GET Record API
 const singleRecordEndpoint = `https://${subdomain}.kintone.com/k/v1/record.json?app=${appID}&${parameters}`;
 
 // This runs if a GET request calls for localhost:5000/getData
@@ -89,12 +91,9 @@ app.post('/postData', cors(corsOptions), async (req, res) => {
     },
     body: JSON.stringify(requestBody)
   }
-
-  // Parameters needed for a POST request to Kintone
   const response = await fetch(singleRecordEndpoint, options);
   const jsonResponse = await response.json();
   res.json(jsonResponse);
-
 });
 
 app.listen(PORT, () => {
