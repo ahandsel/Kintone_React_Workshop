@@ -1,4 +1,4 @@
-# React v2.1
+# React Content v2.1
 
 ## Gist & IMG urls
 
@@ -8,7 +8,7 @@
 
 ![CORS_Error_Crop.png Kintone_React_Workshop v2.1](https://user-images.githubusercontent.com/30670749/125892916-ef0f189c-af9f-4dc4-95d6-c0a111bb7238.png)
 
-## New Overview:
+## New Overview
 
 | Part | Description                                      | Type            |
 | ---- | ------------------------------------------------ | --------------- |
