@@ -19,7 +19,7 @@ Click [**here**](https://gist.github.com/ahandsel/556e42aad59ff22604a9042174c556
     * [📺 Quick Videos Going Over the Prep Work](#-quick-videos-going-over-the-prep-work)
   * [📚 Suggested Reading](#-suggested-reading)
   * [Details at dev.to](#details-at-devto)
-  * [Overview of the Files](#overview-of-the-files)
+  * [Overview of the Workshop](#overview-of-the-workshop)
 
 ---
 
