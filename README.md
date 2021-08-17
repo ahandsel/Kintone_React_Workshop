@@ -12,6 +12,8 @@ Current Status:
 Next Step:
   - Figure out how to trigger the `recordsList.js` to render after the record is POSTed to Kintone
 
+Hiding Kintone API Token with [dotenv](https://www.npmjs.com/package/dotenv)
+
 ## Past Notes
 1. Create react app --> frontend
 2. Create a folder within src --> requests

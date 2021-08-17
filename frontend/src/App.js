@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+
+import RecordsList from './components/recordsList'
+import RecordInput from './components/recordInput'
+
+import getKintoneRecords from './requests/getKintoneRecords';
 
 function App() {
+
+  const [listItems, setListItems] = useState("*** now loading ***");
+
+  const [titleValue, setTitleValue] = useState("");
+  const [authorValue, setAuthorValue] = useState("");
+
+  useEffect(() => {
+    getKintoneRecords().then(
+      result => setListItems(result)
+    );
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RecordsList list={listItems} />
+      <RecordInput
+        title={titleValue}
+        author={authorValue}
+        onTitleChange={setTitleValue}
+        onAuthorChange={setAuthorValue}
+      />
     </div>
   );
 }
