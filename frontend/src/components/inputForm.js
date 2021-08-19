@@ -1,18 +1,16 @@
-// inputForm.js
+// InputForm.js - Create a form that makes a POST request
 
 import { useState } from 'react';
-
-import postKintoneRecord from '../requests/postKintoneRecord';
-import getKintoneRecords from '../requests/getKintoneRecords';
+import getList from '../requests/getList';
+import postRecord from '../requests/postRecord';
 
 function InputForm(props) {
-
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
   function buttonClick(title, author) {
-    postKintoneRecord(title, author)
-      .then(() => getKintoneRecords())
+    postRecord(title, author)
+      .then(() => getList()) // Trigger re-rendering the listItems in App.js
       .then(result => props.setListItems(result))
   }
 
@@ -27,19 +25,17 @@ function InputForm(props) {
     <div>
       <form>
         <div>
-          <label htmlFor="title-input">Title:</label>
+          <label>Title: </label>
           <input
             type="text"
-            id="title-input"
             value={title}
             onChange={handleTitleChange}
           />
         </div>
         <div>
-          <label htmlFor="author-input">Author:</label>
+          <label>Author: </label>
           <input
             type="text"
-            id="author-input"
             value={author}
             onChange={handleAuthorChange}
           />
