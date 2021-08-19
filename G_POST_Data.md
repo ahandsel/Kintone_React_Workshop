@@ -3,9 +3,13 @@
 Now that we can retrieve & display the data from the Kintone Database App let's submit new data via our frontend React App!  
 We will do this by adding a POST request route on the Express server used when the user inputs via the form on the frontend React App.
 
-To implement the POST request, we will be editing the following two files:
+To implement the POST request, we will be creating the following files:
   * [backend - server.js](#backend---serverjs)
-  * [frontend - App.js](#frontend---indexjs)
+  * [frontend](#frontend)
+    * [getList.js](#getlistjs)
+    * [postRecord.js](#postrecordjs)
+    * [InputForm.js](#inputformjs)
+    * [App.js](#appjs)
 
 **Note**  
 Be sure to restart your Express server when updating `server.js`.
@@ -22,6 +26,8 @@ Expected result:
 File Location: `.../myproject/backend`
 
 ```js
+// backend - server.js
+
 // Express Server Setup
 const express = require('express');
 const cors = require('cors');
@@ -61,9 +67,7 @@ app.get('/getData', cors(corsOptions), async (req, res) => {
       'X-Cybozu-API-Token': apiToken
     }
   }
-  // const response = await fetch(requestEndpoint, fetchOptions);
   const response = await fetch(multipleRecordsEndpoint, fetchOptions);
-
   const jsonResponse = await response.json();
   res.json(jsonResponse);
 });
@@ -101,40 +105,34 @@ app.listen(PORT, () => {
 });
 ```
 
-## frontend - App.js
+## frontend
 We will add a form for user input and function to make a POST request on our newly defined Express server's endpoint.
-
 
 Expected result:
   * Display Kintone app data as a clean list
   * Form at the bottom to add user input
   * When an input is submitted, a POST request is sent out & the list is updated
 
-File Location: `.../myproject/frontend/src/App.js`
+### getList.js
+
+`getList.js` will be the same as shown in [Part F](https://gist.github.com/ahandsel/813e642bf36008192708c50a23185935#file-f_get_data-md).
+
+File Location: `.../myproject/frontend/src/requests/getList.js`
+
+### postRecord.js
+Similar to `getList.js`, we will add `postRecord.js` in the `requests` folder to handel the Kintone POST API calls.
 
 ```jsx
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+// postRecord.js - Post to Kintone
 
 // Declare the GET & POST endpoints defined in our Express server
-const getRecordsEndpoint = 'http://localhost:5000/getData';
-const addRecordEndpoint = 'http://localhost:5000/postData';
-
-const callRestApi = async () => {
-  const response = await fetch(getRecordsEndpoint); //Update endpoint
-  const jsonResponse = await response.json();
-  console.log(jsonResponse);
-  const arrayOfLists = jsonResponse.records.map(
-    record => <li key={record.recordID.value}><b>{record.title.value}</b> written by {record.author.value}</li>
-  )
-  return arrayOfLists;
-};
+const addRecordEndpoint = "http://localhost:5000/postData";
 
 // Make REST API Calls & take in the values stored in the state variables related to the input fields
-const AddNewRecord = async (Title, Author) => {
-  const RecordBodyParameters = {
-    'title': Title,
-    'author': Author
+export default async function postRecord(title, author) {
+  const recordBodyParameters = {
+    'title': title,
+    author // ES6 syntax that functions the same as above
   }
 
   const options = {
@@ -142,70 +140,117 @@ const AddNewRecord = async (Title, Author) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(RecordBodyParameters)
+    body: JSON.stringify(recordBodyParameters)
   }
 
   const response = await fetch(addRecordEndpoint, options);
   const jsonResponse = await response.json();
+
   console.log(JSON.stringify(jsonResponse));
+
   return jsonResponse;
 };
+```
 
-function RenderResult() {
-  const [apiResponse, setApiResponse] = useState('*** now loading ***');
+### InputForm.js
+We will now create a React component that appends a form on our React App.
 
-  // Create States for the Input Fields
-  const [titleValue, setTitleValue] = useState('');
-  const [authorValue, setAuthorValue] = useState('');
-  const [successCounter, setSuccessCounter] = useState(0);
+Create a `components` folder in the `src` folder. This is where we will create `InputForm.js`.
 
-  useEffect(() => {
-    callRestApi().then(
-      result => setApiResponse(result));
-  }, [successCounter]);
+We will import two files in the `requests` folder to make GET & POST API calls to Kintone.
 
-  // Define the onChange functions
-  function HandleTitleChange(event) {
-    setTitleValue(event.target.value);
+We will create and export the form component.
+
+File Location: `.../myproject/frontend/src/components/InputForm.js`
+
+```jsx
+// InputForm.js - Create a form that makes a POST request
+
+import { useState } from 'react';
+import getList from '../requests/getList.js';
+import postRecord from '../requests/postRecord.js';
+
+function InputForm(props) {
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+
+  function buttonClick(title, author) {
+    postRecord(title, author)
+      .then(() => getList()) // Trigger re-rendering the getList
+      .then(result => props.setListItems(result))
   }
 
-  function HandleAuthorChange(event) {
-    setAuthorValue(event.target.value);
+  function handleTitleChange(event) {
+    setTitle(event.target.value);
+  }
+  function handleAuthorChange(event) {
+    setAuthor(event.target.value);
   }
 
-  // Define the Button Click function
-  function ButtonClick() {
-    setApiResponse(apiResponse.concat(<li key="0" >*** now loading ***</li>));
-    AddNewRecord(titleValue, authorValue)
-      .then(response => {
-        setSuccessCounter(successCounter + 1);
-      });
-  }
-
-  // Append a form for user input
   return (
     <div>
-      <h1>React App</h1>
-      <ul>{apiResponse}</ul>
       <form>
         <div>
-          <label htmlFor="title-input">Title:</label>
-          <input type="text" value={titleValue} id="title-input" onChange={HandleTitleChange} />
+          <label>Title: </label>
+          <input
+            type="text"
+            value={title}
+            onChange={andleTitleChange}
+          />
         </div>
         <div>
-          <label htmlFor="author-input">Author:</label>
-          <input type="text" value={authorValue} id="author-input" onChange={HandleAuthorChange} />
+          <label>Author: </label>
+          <input
+            type="text"
+            value={author}
+            onChange={handleAuthorChange}
+          />
         </div>
-        <button type="button" onClick={ButtonClick}>Add data</button>
+        <button type="button" onClick={() => buttonClick(title, author)}>Post to Kintone</button>
       </form>
     </div>
   );
 };
+export default InputForm;
+```
 
-ReactDOM.render(
-  <RenderResult />,
-  document.querySelector('#root')
-);
+### App.js
+For the form component, we will import `InputForm`.  
+We will add the InputForm in the div we are exporting.
+
+For the GET API call function, we will import `getList`.  
+
+File Location: `.../myproject/frontend/src/App.js`
+
+```jsx
+// App.js - Parent Component
+
+import React, { useState, useEffect } from 'react';
+import getList from './requests/getList.js';
+
+// Get the form component
+import InputForm from './components/InputForm.js'
+
+function App() {
+  const [listItems, setListItems] = useState('*** now loading ***');
+  useEffect(() => {
+    getList().then(
+      result => setListItems(result)
+    );
+  }, []);
+
+  return (
+    <div>
+      <div>
+        <h1>React Manga List App</h1>
+        <ul>{listItems}</ul>
+      </div>
+      <InputForm setListItems={setListItems} />
+    </div>
+  );
+}
+
+export default App;
 ```
 
 ## Result - Kintone Database App's data displayed as bullet points with a form to submit a new entry
