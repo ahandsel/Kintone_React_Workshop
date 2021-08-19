@@ -1,5 +1,5 @@
-<!-- 00_React_Workshop_v2.md -->
-# React & REST API Workshop Part 2
+<!-- 00_React_Workshop_v3.md -->
+# React & REST API Workshop Version 3
 
 ## Let's POST Data to a Web Database From a React Component
 
