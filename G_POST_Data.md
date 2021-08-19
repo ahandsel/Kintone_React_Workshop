@@ -5,7 +5,7 @@ We will do this by adding a POST request route on the Express server used when t
 
 To implement the POST request, we will be editing the following two files:
   * [backend - server.js](#backend---serverjs)
-  * [frontend - index.js](#frontend---indexjs)
+  * [frontend - App.js](#frontend---indexjs)
 
 **Note**  
 Be sure to restart your Express server when updating `server.js`.
@@ -101,7 +101,7 @@ app.listen(PORT, () => {
 });
 ```
 
-## frontend - index.js
+## frontend - App.js
 We will add a form for user input and function to make a POST request on our newly defined Express server's endpoint.
 
 
@@ -110,7 +110,7 @@ Expected result:
   * Form at the bottom to add user input
   * When an input is submitted, a POST request is sent out & the list is updated
 
-File Location: `.../myproject/frontend/src/index.js`
+File Location: `.../myproject/frontend/src/App.js`
 
 ```jsx
 import React, { useState, useEffect } from 'react';

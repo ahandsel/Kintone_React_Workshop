@@ -4,7 +4,7 @@ Let's grab data from the Kintone Database App and output it to our frontend Reac
 
 To implement the GET request, we will be editing the following two files:
   * [backend - server.js](#backend---serverjs)
-  * [frontend - index.js](#frontend---indexjs)
+  * [frontend - App.js](#frontend---indexjs)
 
 ---
 
@@ -66,13 +66,13 @@ app.listen(PORT, () => {
 
 ---
 
-## frontend - index.js
+## frontend - App.js
 Now that we got our Express server setup, time for configuring the frontend React App!  
 
 Expected Result:  
 Data from the Kintone App will be outputted as bullet points at <http://localhost:3000/>.
 
-File Location: `.../myproject/frontend/src/index.js`
+File Location: `.../myproject/frontend/src/App.js`
 
 ```jsx
 import React, { useState, useEffect } from 'react';

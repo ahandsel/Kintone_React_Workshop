@@ -7,12 +7,12 @@ But can we just swap the request endpoint with Kintone's?
 
 ---
 
-## Sample Code for index.js
+## Sample Code for App.js
 We will try a GET request to Kintone from our frontend React App.
 
 If you want to run this code, be sure to input your Kintone specifications for `subdomain`, `appID`, and `apiToken`.
 
-File Location: `.../myproject/frontend/src/index.js`
+File Location: `.../myproject/frontend/src/App.js`
 
 ```jsx
 import React, { useState, useEffect } from 'react';

@@ -5,7 +5,7 @@ So let's try that in our frontend React App.
 
 ---
 
-## Sample Code for index.js
+## Sample Code for App.js
 Here is an example that tries to output an API response in the frontend React App.  
 It calls [Random User Generator API](https://randomuser.me/api/), waits for a response, and then creates a React element using the JSON data.  
 Let's see what happens!  
