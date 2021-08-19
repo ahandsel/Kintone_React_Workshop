@@ -2,4 +2,5 @@
 .DS_Store
 .env
 ZZZ_Private.*
+temp.*
 backend/node_modules
