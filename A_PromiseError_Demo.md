@@ -10,17 +10,16 @@ Here is an example that tries to output an API response in the frontend React Ap
 It calls [Random User Generator API](https://randomuser.me/api/), waits for a response, and then creates a React element using the JSON data.  
 Let's see what happens!  
 
-File Location: `.../myproject/frontend/src/index.js`
+File Location: `.../myproject/frontend/src/App.js`
 
 ```jsx
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 // Call Random User Generator API
 const restEndpoint = 'https://randomuser.me/api/';
 
 // Wait for response & tries to output it to React
-const callRestApi = async () => {
+async function App() {
   const response = await fetch(restEndpoint);
   const jsonResponse = await response.json();
   console.log(jsonResponse);
@@ -29,17 +28,14 @@ const callRestApi = async () => {
   return React.createElement('h1', null, JSON.stringify(jsonResponse));
 };
 
-ReactDOM.render(
-  callRestApi(),
-  document.querySelector('#root')
-);
+export default App;
 ```
 
 ---
 
 ## Result - Error
 
-The `callRestApi()` async function returns a promise object immediately as it waits for the Random User Generator API's response.  
+The `App()` function component returns a promise object immediately as it waits for the Random User Generator API's response.  
 React doesn't "wait" for the REST API result, so it tries to create and render the element with the promise object immediately and failing.
 It attempts to display the Random User Generator API response into a React element.  
 However, the following error will display instead:
