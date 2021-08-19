@@ -25,12 +25,12 @@ Confused? 🤔 → Check out the video below:
 
 Let's create a Kintone App to list off your favorite [Manga](https://en.wikipedia.org/wiki/Manga)s!
 
-Here are the required fields & their configurations for our workshop:
+Here are the **required** fields & their **configurations** for our workshop:
 
-| Field Type    | Field Name    | Field Code | Note                             |
-| ------------- | ------------- | ---------- | -------------------------------- |
-| Text          | Title         | `title`    | The manga's title                |
-| Text          | Author        | `author`   | The manga's author               |
-| Record number | Record number | `recordID` | Auto generated ID for each entry |
+| Field Type    | Field Name    | Field Code | Note                              |
+| ------------- | ------------- | ---------- | --------------------------------- |
+| Text          | Title         | `title`    | The manga's title                 |
+| Text          | Author        | `author`   | The manga's author                |
+| Record number | Record number | `recordID` | Auto generated IDs for each entry |
 
 ![Create_App_Demo.gif Kintone_React_Workshop v2.1](https://user-images.githubusercontent.com/30670749/125898739-1bc018ac-1740-40e0-91cc-ab829192d2ea.gif)
