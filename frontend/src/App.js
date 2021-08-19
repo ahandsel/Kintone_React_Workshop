@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 
-import RecordsList from './components/recordsList'
-import RecordInput from './components/recordInput' //Append
+// import RecordInput from './components/recordInput' //Append
+import InputForm from './components/inputForm'
 
 import getKintoneRecords from './requests/getKintoneRecords';
 
@@ -18,9 +18,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <RecordsList list={listItems} />
-      <RecordInput setListItems={setListItems} /> {/* Append */}
+    <div>
+      <div>
+        <h1>React App x Manga DB</h1>
+        <ul>{listItems}</ul>
+      </div>
+      <InputForm setListItems={setListItems} /> {/* Append */}
     </div>
   );
 }
