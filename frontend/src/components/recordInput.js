@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+// recordInput.js
+
+import { useState } from 'react';
 
 import postKintoneRecord from '../requests/postKintoneRecord';
 import getKintoneRecords from '../requests/getKintoneRecords';
@@ -10,8 +12,8 @@ function RecordInput(props) {
 
   function buttonClick(title, author) {
     postKintoneRecord(title, author)
-    .then(() => getKintoneRecords())
-    .then(result => props.setListItems(result))
+      .then(() => getKintoneRecords())
+      .then(result => props.setListItems(result))
   }
 
   function handleTitleChange(event) {

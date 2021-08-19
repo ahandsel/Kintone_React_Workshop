@@ -1,3 +1,5 @@
+// getKintoneRecords.js
+
 // Create an array of lists by looping through Kintone's responded array
 
 //record.title.value = value of the Title field

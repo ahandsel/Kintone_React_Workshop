@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+// App.js
+
+import { useState, useEffect } from 'react';
 
 import RecordsList from './components/recordsList'
 import RecordInput from './components/recordInput' //Append
