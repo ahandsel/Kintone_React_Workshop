@@ -19,9 +19,9 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 // Kintone API Setup
-const subdomain = ""; //Enter your Kintone Subdomain (ex: devevents)
-const appID = ""; //Enter your App's ID number (ex: 1)
-const apiToken = ""; //Enter your App's API Token
+const subdomain = ''; //Enter your Kintone Subdomain (ex: devevents)
+const appID = ''; //Enter your App's ID number (ex: 1)
+const apiToken = ''; //Enter your App's API Token
 
 const getKintoneData = async () => {
   const requestEndpoint = `https://${subdomain}.kintone.com/k/v1/records.json?app=${appID}`;
@@ -36,7 +36,7 @@ const getKintoneData = async () => {
 };
 
 const RenderResult = () => {
-  const [apiResponse, setApiResponse] = useState("*** now loading ***");
+  const [apiResponse, setApiResponse] = useState('*** now loading ***');
 
   useEffect(() => {
     getKintoneData().then(

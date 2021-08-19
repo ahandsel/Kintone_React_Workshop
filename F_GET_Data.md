@@ -32,16 +32,16 @@ app.use(express.json());
 // Set Cross-Origin Resource Sharing (CORS) to frontend React App
 app.use(cors());
 const corsOptions = {
-  origin: "http://localhost:3000"
+  origin: 'http://localhost:3000'
 };
 
 // Kintone API Setup
-const subdomain = ""; //Enter your Kintone Subdomain (ex: devevents)
-const appID = ""; //Enter your App's ID number (ex: 1)
-const apiToken = ""; //Enter your App's API Token (ex: cJrAD9...)
+const subdomain = ''; //Enter your Kintone Subdomain (ex: devevents)
+const appID = ''; //Enter your App's ID number (ex: 1)
+const apiToken = ''; //Enter your App's API Token (ex: cJrAD9...)
 
 // Append a Query Parameters to the Request Endpoint
-const parameters = "query=order by recordID asc";
+const parameters = 'query=order by recordID asc';
 
 // Call Kintone's GET Records API
 const multipleRecordsEndpoint = `https://${subdomain}.kintone.com/k/v1/records.json?app=${appID}&${parameters}`
@@ -79,7 +79,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 // Declare the GET endpoint defined in our Express server
-const getRecordsEndpoint = "http://localhost:5000/getData";
+const getRecordsEndpoint = 'http://localhost:5000/getData';
 
 const callRestApi = async () => {
   const response = await fetch(getRecordsEndpoint);
@@ -103,7 +103,7 @@ const callRestApi = async () => {
 };
 
 function RenderResult() {
-  const [apiResponse, setApiResponse] = useState("*** now loading ***");
+  const [apiResponse, setApiResponse] = useState('*** now loading ***');
 
   useEffect(() => {
     callRestApi().then(

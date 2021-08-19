@@ -36,16 +36,16 @@ app.use(express.json());
 // Set Cross-Origin Resource Sharing (CORS) to frontend React App
 app.use(cors());
 const corsOptions = {
-  origin: "http://localhost:3000"
+  origin: 'http://localhost:3000'
 };
 
 // Kintone API Setup
-const subdomain = ""; //Enter your Kintone Subdomain (ex: devevents)
-const appID = ""; //Enter your App's ID number (ex: 1)
-const apiToken = ""; //Enter your App's API Token (ex: cJrAD9...)
+const subdomain = ''; //Enter your Kintone Subdomain (ex: devevents)
+const appID = ''; //Enter your App's ID number (ex: 1)
+const apiToken = ''; //Enter your App's API Token (ex: cJrAD9...)
 
 // Append a Query Parameters to the Request Endpoint
-const parameters = "query=order by recordID asc";
+const parameters = 'query=order by recordID asc';
 
 // Call Kintone's GET Records API
 const multipleRecordsEndpoint = `https://${subdomain}.kintone.com/k/v1/records.json?app=${appID}&${parameters}`
@@ -73,13 +73,13 @@ app.get('/getData', cors(corsOptions), async (req, res) => {
 // This runs if a POST request calls for localhost:5000/postData
 app.post('/postData', cors(corsOptions), async (req, res) => {
   const requestBody = {
-    "app": appID,
-    "record": {
-      "title": {
-        "value": req.body.title
+    'app': appID,
+    'record': {
+      'title': {
+        'value': req.body.title
       },
-      "author": {
-        "value": req.body.author
+      'author': {
+        'value': req.body.author
       }
     }
   };
@@ -117,8 +117,8 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 // Declare the GET & POST endpoints defined in our Express server
-const getRecordsEndpoint = "http://localhost:5000/getData";
-const addRecordEndpoint = "http://localhost:5000/postData";
+const getRecordsEndpoint = 'http://localhost:5000/getData';
+const addRecordEndpoint = 'http://localhost:5000/postData';
 
 const callRestApi = async () => {
   const response = await fetch(getRecordsEndpoint); //Update endpoint
@@ -152,11 +152,11 @@ const AddNewRecord = async (Title, Author) => {
 };
 
 function RenderResult() {
-  const [apiResponse, setApiResponse] = useState("*** now loading ***");
+  const [apiResponse, setApiResponse] = useState('*** now loading ***');
 
   // Create States for the Input Fields
-  const [titleValue, setTitleValue] = useState("");
-  const [authorValue, setAuthorValue] = useState("");
+  const [titleValue, setTitleValue] = useState('');
+  const [authorValue, setAuthorValue] = useState('');
   const [successCounter, setSuccessCounter] = useState(0);
 
   useEffect(() => {
