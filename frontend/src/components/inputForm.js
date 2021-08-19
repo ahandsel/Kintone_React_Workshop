@@ -1,11 +1,11 @@
-// recordInput.js
+// inputForm.js
 
 import { useState } from 'react';
 
 import postKintoneRecord from '../requests/postKintoneRecord';
 import getKintoneRecords from '../requests/getKintoneRecords';
 
-function RecordInput(props) {
+function InputForm(props) {
 
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -49,4 +49,4 @@ function RecordInput(props) {
     </div>
   );
 };
-export default RecordInput;
+export default InputForm;
