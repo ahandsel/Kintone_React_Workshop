@@ -16,7 +16,6 @@ File Location: `.../myproject/frontend/src/index.js`
 
 ```jsx
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 
 // Kintone API Setup
 const subdomain = ''; //Enter your Kintone Subdomain (ex: devevents)
@@ -35,7 +34,7 @@ const getKintoneData = async () => {
   return JSON.stringify(jsonResponse);
 };
 
-const RenderResult = () => {
+function App() {
   const [apiResponse, setApiResponse] = useState('*** now loading ***');
 
   useEffect(() => {
@@ -51,10 +50,7 @@ const RenderResult = () => {
   );
 };
 
-ReactDOM.render(
-  <RenderResult />,
-  document.getElementById('root')
-);
+export default App;
 ```
 
 ---
