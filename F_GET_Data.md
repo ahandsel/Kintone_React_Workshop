@@ -66,62 +66,78 @@ app.listen(PORT, () => {
 
 ---
 
-## frontend - App.js
+## frontend
 Now that we got our Express server setup, time for configuring the frontend React App!  
 
 Expected Result:  
 Data from the Kintone App will be outputted as bullet points at <http://localhost:3000/>.
 
-File Location: `.../myproject/frontend/src/App.js`
+### getList.js
+First, we will create a `requests` folder inside the `frontend/src/`.  
+This is where we will add the two functions that interacts with React and Kintone.
+
+In `getList.js`, we will create a list array by looping through Kintone's response.
+
+**Kintone API Notes**:  
+  * `record.title.value` is the value of the Title field
+  * `record.author.value` is the value of the Author field
+
+**React Note**:  
+  * When creating a list in React, assign an unique ID to each item
+  * We will use `record.recordID.value` for the keys
+
+File Location: `.../myproject/frontend/src/requests/getList.js`
 
 ```jsx
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+// getList.js - Create a list array
 
 // Declare the GET endpoint defined in our Express server
-const getRecordsEndpoint = 'http://localhost:5000/getData';
+const getRecordsEndpoint = "http://localhost:5000/getData";
 
-const callRestApi = async () => {
+export default async function getList() {
   const response = await fetch(getRecordsEndpoint);
   const jsonResponse = await response.json();
 
   console.log(jsonResponse);
 
-  // return JSON.stringify(jsonResponse);
-
-  // Create an array of lists by looping through Kintone's responded array
-
-  //record.title.value = value of the Title field
-  //record.author.value = value of the author field
-
-  // In React, assign a unique ID to each created list
-  // Use record.recordID.value for key
   const arrayOfLists = jsonResponse.records.map(
-    record => <li key={record.recordID.value}><b>{record.title.value}</b> written by {record.author.value}</li>
+    record =>
+      <li key={record.recordID.value}><b>{record.title.value}</b> written by {record.author.value}</li>
   )
+
   return arrayOfLists;
 };
+```
 
-function RenderResult() {
-  const [apiResponse, setApiResponse] = useState('*** now loading ***');
+### App.js
+We will be importing the `getList` module for the Kintone records-based list items.
 
+File Location: `.../myproject/frontend/src/App.js`
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+import getList from './requests/getList.js'; // Used to get Kintone data
+
+function App() {
+  const [listItems, setListItems] = useState('*** now loading ***');
   useEffect(() => {
-    callRestApi().then(
-      result => setApiResponse(result));
+    getList().then(
+      result => setListItems(result)
+    );
   }, []);
 
   return (
     <div>
-      <h1>React App</h1>
-      <ul>{apiResponse}</ul>
+      <div>
+        <h1>React Manga List App</h1>
+        <ul>{listItems}</ul>
+      </div>
     </div>
   );
-};
+}
 
-ReactDOM.render(
-  <RenderResult />,
-  document.querySelector('#root')
-);
+export default App;
 ```
 
 ---
