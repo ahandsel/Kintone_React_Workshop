@@ -33,8 +33,10 @@ const callRestApi = async () => {
 };
 
 const RenderResult = () => {
+
   // Establish useState by giving it our initial state
   // const [state, setState] = useState(initialState);
+
   const [apiResponse, setApiResponse] = useState("*** now loading ***");
 
   // useEffect takes 2 arguments:
