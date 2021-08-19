@@ -43,6 +43,7 @@ const apiToken = ""; //Enter your App's API Token (ex: cJrAD9...)
 // Append a Query Parameters to the Request Endpoint
 const parameters = "query=order by recordID asc";
 
+// Call Kintone's GET Records API
 const multipleRecordsEndpoint = `https://${subdomain}.kintone.com/k/v1/records.json?app=${appID}&${parameters}`
 
 // This runs if a GET request calls for localhost:5000/getData
