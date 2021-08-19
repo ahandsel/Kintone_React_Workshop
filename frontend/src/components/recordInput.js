@@ -1,7 +1,12 @@
+import React, { useState } from 'react';
+
 import postKintoneRecord from '../requests/postKintoneRecord';
 import getKintoneRecords from '../requests/getKintoneRecords';
 
 function RecordInput(props) {
+
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
 
   function buttonClick(title, author) {
     postKintoneRecord(title, author)
@@ -10,22 +15,22 @@ function RecordInput(props) {
   }
 
   function handleTitleChange(event) {
-    props.onTitleChange(event.target.value);
+    setTitle(event.target.value);
   }
   function handleAuthorChange(event) {
-    props.onAuthorChange(event.target.value);
+    setAuthor(event.target.value);
   }
+
   return (
     <div>
       <form>
         <div>
           <label htmlFor="title-input">Title:</label>
-          <input 
+          <input
             type="text"
             id="title-input"
-            // value={titleValue}
+            value={title}
             onChange={handleTitleChange}
-            // onTitleChange={props.onTitleChange}
           />
         </div>
         <div>
@@ -33,12 +38,11 @@ function RecordInput(props) {
           <input
             type="text"
             id="author-input"
-            // value={authorValue}
+            value={author}
             onChange={handleAuthorChange}
-            // onAuthorChange={props.onAuthorChange}
           />
         </div>
-        <button type="button" onClick={() => buttonClick(props.title, props.author)}>Add data</button>
+        <button type="button" onClick={() => buttonClick(title, author)}>Post to Kintone</button>
       </form>
     </div>
   );
