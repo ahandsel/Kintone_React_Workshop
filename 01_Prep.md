@@ -1,5 +1,5 @@
 # Prepping for React Workshop
-This is a step-by-step guide that will go over everything you need to do before our workshop in detail!
+This is a step-by-step guide that will go over everything you need to do before our workshop in detail!  
 Let's get started!
 
 **Outline**:
