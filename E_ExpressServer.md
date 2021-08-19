@@ -13,30 +13,54 @@ We will use Express to create custom endpoints that our frontend React App can m
 
 ## Installing the Express Server
 (1) From your terminal, go to your **myproject** folder
-  * $ `cd .../myproject`
+
+  ```bash
+  cd .../myproject
+  ```
 
 (2) Create **backend** folder
-  * $ `mkdir backend`
-  * $ `cd backend`
+
+  ```bash
+  mkdir backend
+
+  cd backend
+  ```
 
 (3) Create your Express project
-  * $ `npm init`
+
+  ```bash
+  npm init
+  ```
+
   * Hit enter to skip the questions
 
 (4) Continue to install some dependencies
-  * $ `npm install express node-fetch cors`
+
+  ```bash
+  npm install express node-fetch cors
+  ```
+
 
 (5) Create a **server.js** file inside the **backend** folder
-  * $ `touch server.js`
+
+  ```bash
+  touch server.js
+  ```
 
 ## Starting the Express Server
 (1) Configure the **server.js** file
 
 (2) From your terminal, go to your **backend** folder
-  * $ `cd .../myproject/backend`
+
+  ```bash
+  cd .../myproject/backend
+  ```
 
 (3) Start the Express Server
-  * $ `node server.js`
+
+ ```bash
+  node server.js
+  ```
 
 ---
 
