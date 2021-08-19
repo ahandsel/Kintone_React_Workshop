@@ -26,6 +26,7 @@ function App() {
         author={authorValue}
         onTitleChange={setTitleValue}
         onAuthorChange={setAuthorValue}
+        setListItems={setListItems}
       />
     </div>
   );

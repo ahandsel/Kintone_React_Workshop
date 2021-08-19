@@ -1,11 +1,12 @@
 import postKintoneRecord from '../requests/postKintoneRecord';
+import getKintoneRecords from '../requests/getKintoneRecords';
 
 function RecordInput(props) {
 
   function buttonClick(title, author) {
-    postKintoneRecord(title, author).then(
-      console.log("Data has been posted!")
-    );
+    postKintoneRecord(title, author)
+    .then(() => getKintoneRecords())
+    .then(result => props.setListItems(result))
   }
 
   function handleTitleChange(event) {
