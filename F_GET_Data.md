@@ -2,9 +2,11 @@
 
 Let's grab data from the Kintone Database App and output it to our frontend React App!
 
-To implement the GET request, we will be editing the following two files:
+To implement the GET request, we will be creating the following files:
   * [backend - server.js](#backend---serverjs)
-  * [frontend - App.js](#frontend---indexjs)
+  * [frontend](#frontend)
+    * [getList.js](#getlistjs)
+    * [App.js](#appjs)
 
 ---
 
@@ -18,6 +20,8 @@ Expected result:
 File Location: `.../myproject/backend`
 
 ```js
+// backend - server.js
+
 // Express Server Setup
 const express = require('express');
 const cors = require('cors');
@@ -115,6 +119,8 @@ We will be importing the `getList` module for the Kintone records-based list ite
 File Location: `.../myproject/frontend/src/App.js`
 
 ```jsx
+// App.js - Parent Component
+
 import React, { useState, useEffect } from 'react';
 
 import getList from './requests/getList.js'; // Used to get Kintone data
