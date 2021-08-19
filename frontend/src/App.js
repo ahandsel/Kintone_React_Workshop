@@ -24,7 +24,7 @@ function App() {
 
   return (
     // JSX includes html-like syntax
-    <div className="App">
+    <div>
       <div>
         <h1>React App x Manga DB</h1>
         <ul>{listItems}</ul>
