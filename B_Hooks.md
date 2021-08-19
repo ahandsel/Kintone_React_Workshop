@@ -10,34 +10,33 @@ We will use `useState` & `useEffect` Hooks to handle the REST API calls in Rea
 
 [useEffect hooks](https://reactjs.org/docs/hooks-effect.html) allow us to run functions after the rendering has finished. We'll use this to run a REST API call and update the state variable, which will then cause React to re-render the UI.
 
-## Sample Code for index.js
+## Sample Code for App.js
 
-File Location: `.../myproject/frontend/src/index.js`
+File Location: `.../myproject/frontend/src/App.js`
 
 ```jsx
 // Get started by importing the React JavaScript library & Hooks
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 
 // Call Random User Generator API
-const restEndpoint = "https://randomuser.me/api/";
+const restEndpoint = 'https://randomuser.me/api/';
 
-// Wait for response & return the API response
-const callRestApi = async () => {
+// Wait for response & tries to output it to React
+// async function App() {
+async function callRestApi() {
   const response = await fetch(restEndpoint);
   const jsonResponse = await response.json();
-
   console.log(jsonResponse);
 
   return JSON.stringify(jsonResponse);
 };
 
-const RenderResult = () => {
+function App() {
 
   // Establish useState by giving it our initial state
   // const [state, setState] = useState(initialState);
 
-  const [apiResponse, setApiResponse] = useState("*** now loading ***");
+  const [apiResponse, setApiResponse] = useState('*** now loading ***');
 
   // useEffect takes 2 arguments:
   // 1st = a function, called effect, that is executed when the React Component is rendered
@@ -57,11 +56,7 @@ const RenderResult = () => {
   );
 };
 
-// Where the magic happens!
-ReactDOM.render(
-  <RenderResult />,
-  document.getElementById('root')
-);
+export default App;
 ```
 
 ---
